@@ -29,7 +29,7 @@ namespace RbkTransStringSystem
             string s1 = "";
             foreach (byte b in gbk)
             {
-                s1 += $"/{Convert.ToString(b, 8)}";
+                s1 += $"\\{Convert.ToString(b, 8)}";
             }
             this.richTextBox2.Text = s1;
         }
@@ -42,7 +42,7 @@ namespace RbkTransStringSystem
         private void button2_Click(object sender, EventArgs e)
         {
             string cd = this.richTextBox1.Text;
-            string[] b4 = RemoveEmptyString(cd.Split('/'));
+            string[] b4 = RemoveEmptyString(cd.Split('\\'));
             byte[] bs = new byte[b4.Length];
             for (int i = 0; i < b4.Length; i++)
             {
